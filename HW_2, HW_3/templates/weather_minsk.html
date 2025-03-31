@@ -17,6 +17,15 @@
             width: 100px;
             text-align: center;
         }
+        .a-wrap {
+            margin-bottom:  50px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: #ffc369;
+            width: 100px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -24,6 +33,9 @@
     <div>
         <a href="/">На главную</a>
     </div>
+    {% if user_text %}
+        <p class="a-wrap">{{ user_text }}</p>
+    {% endif %}
     <h1>{{ response }}</h1>
 </body>
 </html>

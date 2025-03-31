@@ -32,6 +32,12 @@
     <a href="/fox/1/">Cтраница 2</a>
     <a href="/weather-minsk/">Cтраница 3</a>
     <a href="/weather/Minsk/">Cтраница 4</a>
+    {% if user_auth == "true" %}
+        <a href="/login/">Вход</a>
+        <a href="/registration/">Регистрация</a>
+    {% else %}
+        <a href="/logout/">Выход</a>
+    {% endif %}
     </div>
     <br>
     <div>

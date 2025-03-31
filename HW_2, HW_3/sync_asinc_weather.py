@@ -2,6 +2,7 @@ import asyncio
 import time
 from aiohttp import ClientSession
 import requests
+import dis
 
 n_step:int = 0
 
@@ -30,8 +31,8 @@ def get_weather(city):
     params = {'q': city, 'APPID': '2a4ff86f9aaa70041ec8e82db64abf56'}
     res = requests.get(url,params) # делаем GET запрос
     res = res.json() # так как возвращают json, конвертируем его в словарь
-    # print(res)        
-    return f'{city}: {res["weather"][0]["main"]}'
+    # print(res)
+    return f'{city}: {res["weather"][0]["main"]}: {round((float(res["main"]["temp"])-273.15), 2)}°C - {round((float(res["main"]["feels_like"])-273.15), 2)}°C'
     
 
 
@@ -46,7 +47,7 @@ async def async_main(cities_):
 
 def main(cities_):    
     for city in cities_:
-        get_weather(city)
+        print(get_weather(city))
 
     
 

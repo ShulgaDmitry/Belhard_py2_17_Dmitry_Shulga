@@ -37,7 +37,9 @@
     <div class="a-wrap">
         <a href="/">На главную</a>
     </div>
-
+    {% if user_text %}
+        <p class="a-wrap">{{ user_text }}</p>
+    {% endif %}
     <div class="img-wrap">
         <img src = "{{h}}" alt="123">
     </div>
