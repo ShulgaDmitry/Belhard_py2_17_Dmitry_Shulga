@@ -1,0 +1,39 @@
+.hw8{
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+
+.hw8-wrap {
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hw8-title {
+  margin-bottom: 20px;
+}
+
+.hw8-color-item {
+  margin-left: 30px;
+}
+
+.hw8-favicon-item {
+  margin-left: 30px;
+}
+
+.hw8-bg-item {
+  margin-left: 30px;
+}
+
+.hw8-img-item {
+  margin-left: 30px;
+}
+
+.hw8-favicon-link-item{
+  margin-left: 30px;
+}
+
+.hw8-list-wrap {
+  margin-left: 30px;
+}

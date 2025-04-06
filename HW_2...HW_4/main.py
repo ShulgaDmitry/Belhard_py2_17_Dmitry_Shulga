@@ -3,6 +3,7 @@ import os
 from sync_asinc_weather import get_weather
 import requests
 import json
+import re
 
 BASE_DIR = os.getcwd()
 
@@ -10,6 +11,7 @@ app = Flask(__name__,
             static_folder=os.path.join(BASE_DIR, 'static'),
             template_folder=os.path.join(BASE_DIR, 'templates'))
 
+app = Flask(__name__, static_folder='static')
 
 app.secret_key = os.urandom(24)
 
@@ -30,10 +32,7 @@ def login_required(f):
 
 @app.route("/")
 def index():
-    if 'user' not in session:
-        return render_template('index.html', user_auth = "true")
-    else:
-        return render_template('index.html', user_auth = "false")
+    return render_template('index.html', user_auth = 'user' not in session)
 
 
 @app.route("/duck/")
@@ -64,8 +63,13 @@ def fox(num):
 @login_required
 def weather_minsk():
     response = get_weather('Minsk')
+    city = response["name"]
+    weather = response["weather"][0]["main"]
+    degrees1 = f"{round((float(response["main"]["temp"]) - 273.15), 2)}°C"
+    degrees2 = f"{round((float(response["main"]["feels_like"]) - 273.15), 2)}°C"
     user_text = f"Welcome back, {session['user']}!"
-    return render_template("weather_minsk.html", response = response, user_text = user_text)
+    return render_template("weather_minsk.html", city=city, weather=weather, degrees1=degrees1,
+                               degrees2=degrees2, user_text = user_text)
 
 
 @app.route('/weather/<city>/')
@@ -73,8 +77,13 @@ def weather_minsk():
 def weather_city(city):
     try:
         response = get_weather(city)
+        city = response["name"]
+        weather = response["weather"][0]["main"]
+        degrees1 = f"{round((float(response["main"]["temp"]) - 273.15), 2)}°C"
+        degrees2 = f"{round((float(response["main"]["feels_like"]) - 273.15), 2)}°C"
         user_text = f"Welcome back, {session['user']}!"
-        return render_template("weather_city.html", response=response, user_text = user_text)
+        return render_template("weather_city.html", city=city, weather=weather, degrees1=degrees1,
+                               degrees2=degrees2, user_text = user_text)
     except Exception as e:
         return render_template("weather_city.html", text = "true")
 
@@ -107,76 +116,49 @@ def login():
 @app.route("/registration/", methods=['GET', 'POST'])
 def registration():
     if request.method == 'POST':
-        user={}
+        user = {}
         user['login'] = request.form.get('login123')
         user['pas'] = request.form.get('password123')
         user['name'] = request.form.get('name123')
         user['email'] = request.form.get('email123')
         user['age'] = request.form.get('agel123')
+        err = []
         with open('users.json', 'r', encoding='utf-8') as json_file:
             try:
                 new_data = json.load(json_file)
                 for us in new_data:
                     if user['login'] == us['login']:
-                        err = []
                         err.append("User existed")
                         return render_template('registration.html', err=err)
             except json.JSONDecodeError:
                 new_data = []
-        err = []
         session['user'] = user['login']
         session['pas'] = user['pas']
         session['name'] = user['name']
         session['email'] = user['email']
         session['age'] = user['age']
-        if (6 <= len(user['login']) <= 20 and any(char.isdigit() for char in user['login']) and
-                any(char.isalpha() for char in user['login']) and '_' in user['login']):
-            if (8<=len(user['pas'])<= 15 and any(char.isdigit() for char in user['pas']) and
-                any(char.isalpha() for char in user['pas']) and any(char.isupper() for char in user['pas'])):
-                if all('А' <= char <= 'я' or char in 'Ёё ' for char in user['name']):
-                    if '@' in user['email'] and '.' in user['email']:
-                        if all(char.isdigit() for char in user['age']):
-                            new_data.append(user)
-                            with open('users.json', 'w', encoding='utf-8') as json_file:
-                                json.dump(new_data, json_file)
-                            return redirect(url_for('index'))
-                        else:
-                            err.append("Incorrect age")
-                            age_field = session['age']
-                            email_field = session['email']
-                            name_field = session['name']
-                            user_field = session['user']
-                            pas_field = session['pas']
-                            return render_template('registration.html', err=err, age_field=age_field,
-                                                   email_field=email_field, name_field = name_field,
-                                                   pas_field = pas_field, user_field = user_field)
-                    else:
-                        err.append("Incorrect email")
-                        email_field = session['email']
-                        name_field = session['name']
-                        user_field = session['user']
-                        pas_field = session['pas']
-                        return render_template('registration.html', err=err,email_field=email_field,
-                                               name_field=name_field, pas_field=pas_field, user_field=user_field)
-                else:
-                    err.append("Incorrect name and surname")
-                    name_field = session['name']
-                    user_field = session['user']
-                    pas_field = session['pas']
-                    return render_template('registration.html', err=err,name_field=name_field,
-                                           pas_field=pas_field, user_field=user_field)
-            else:
-                err.append("Incorrect password")
-                user_field = session['user']
-                pas_field = session['pas']
-                return render_template('registration.html', err=err, pas_field=pas_field,
-                                       user_field=user_field)
-        else:
+        if not re.match(r'^[a-zA-Z\d_]{6,20}$', user['login']):
             err.append("Incorrect login")
-            user_field = session['user']
-            return render_template('registration.html', err=err,user_field=user_field)
-    else:
-        return render_template('registration.html')
+        if not re.match(r'^(?=.*[a-zA-Z])(?=.*\d)(?=.*[A-Z]).{8,15}$', user['pas']):
+            err.append("Incorrect password")
+        if not re.match(r'^[А-Яа-яЁё\s]+$', user['name']):
+            err.append("Incorrect name and surname")
+        if not re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', user['email']):
+            err.append("Incorrect email")
+        if not re.match(r'^\d+$', user['age']):
+            err.append("Incorrect age")
+        if err:
+            return render_template('registration.html', err=err,
+                                   age_field=session.get('age'),
+                                   email_field=session.get('email'),
+                                   name_field=session.get('name'),
+                                   pas_field=session.get('pas'),
+                                   user_field=session.get('user'))
+        new_data.append(user)
+        with open('users.json', 'w', encoding='utf-8') as json_file:
+            json.dump(new_data, json_file)
+        return redirect(url_for('index'))
+    return render_template('registration.html')
 
 
 @app.route("/logout/", methods=['GET', 'POST'])
@@ -185,8 +167,15 @@ def logout():
     return redirect(url_for('index'))
 
 
+@app.route("/hw_4/")
+@login_required
+def hw_4():
+    user_text = f"Welcome back, {session['user']}!"
+    return render_template('hw_4.html', user_text = user_text)
+
+
 @app.errorhandler(404)
-def page_not_found(error):
+def page_not_found():
     return '<h1 style="color:red">такой страницы не существует</h1>'
 
 

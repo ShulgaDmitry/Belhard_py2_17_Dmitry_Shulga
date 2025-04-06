@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="conteiner">
+          <div class="header-wrap">
+            <div class="logo-wrap">
+              <p class="logo">DUCK PAGE</p>
+            </div>
+            <nav class="nav-wrap">
+              <ul class="nav-list">
+                <li class="nav-list-item">
+                  <a href="/registration/">REGISTRATION</a>
+                </li>
+                <li class="nav-list-item">
+                  <a href="/"> MAIN PAGE</a>
+                </li>
+              </ul>
+            </nav>
+              <div class="user-img-text-wrap">
+               {% if user_text %}
+                  <div class="nav-list-item-text">
+                    <p class="a-wrap">{{ user_text }}</p>
+                  </div>
+               {% endif %}
+              </div>
+          </div>
+        </div>
+    </header>
+
+    {% if err %}
+        {% for error in err %}
+            <p class="error">{{ error }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <!-- <form action="/get_form/" method="post"> -->
+    <form class="login-form" method="post">
+        <fieldset class="login-fieldset">
+            <legend class="login-legend">Вход</legend>
+            <div class="login-password-btn-wrap">
+                <div class="login-wrap">
+                    <label class="login-label" for="login">Логин</label>
+                    <input class="login-input" type="text" id="login" placeholder="Введите логин" name="login123">
+                </div>
+                <div class="password-wrap">
+                    <label class="password-label">Пароль</label>
+                    <input class="password-input" type="password" id="password" placeholder="Введите пароль" name="password123">
+                </div>
+                <!-- <input type="submit" value="OK"> -->
+                <div class="btn-wrap">
+                    <button class="login-btn-submit" type="submit">Вход</button>
+                    <button class="login-btn-reset" type="reset">Сбросить</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

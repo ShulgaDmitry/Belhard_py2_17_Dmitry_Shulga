@@ -1,0 +1,89 @@
+.hw12 {
+  background-color: rgb(245, 245, 244);
+  padding: 15px 0;
+}
+
+.hw12-title-form-wrap {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hw12-title-wrap {
+  margin-bottom: 20px;
+}
+
+.hw12-title {
+  margin-bottom: 10px;
+}
+.hw12-title-desc {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.necessarily {
+  color: #ff0808;
+}
+
+fieldset{
+  padding: 20px;
+  width: 450px;
+}
+
+legend{
+  text-transform: uppercase;
+}
+
+.contacts-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 70px;
+}
+
+.name-wrap,
+.phone-wrap,
+.email-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 70px;
+}
+
+.age-wrap,
+.gender-wrap,
+.qualities-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts-input,
+.personal-input,
+select,
+textarea {
+  width: 200px;
+}
+
+label {
+  width: 50px;
+}
+
+.animals-wrap {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.animals {
+  width: 90px;
+}
+.hw12-form-btn {
+  padding: 10px 20px;
+}

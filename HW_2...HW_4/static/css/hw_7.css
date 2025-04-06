@@ -1,0 +1,33 @@
+.hw7 {
+  background-color: #f1f1f1;
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+.hw7-title{
+  margin-bottom: 20px;
+}
+
+.hw7-table {
+  width: 50%;
+  border-collapse: collapse;
+  text-align: start;
+  border-top: 1px solid rgb(58, 58, 58);
+  border-bottom: 1px solid rgb(58, 58, 58);
+}
+
+.hw7-tr,
+.hw7-th,
+.hw7-td {
+  text-align: start;
+  padding: 10px;
+  
+}
+
+.decor {
+  font-weight: 700;
+}
+
+.fa-regular {
+  color: rgb(16, 109, 100);
+}

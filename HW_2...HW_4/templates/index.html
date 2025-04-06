@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- подключаем файл со стилями css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Main page</title>
+</head>
+<body>
+    <header class="header">
+        <div class="conteiner">
+          <div class="header-wrap">
+            <div class="logo-wrap">
+              <p class="logo">MAIN PAGE</p>
+            </div>
+            <nav class="nav-wrap">
+              <ul class="nav-list">
+                <li class="nav-list-item">
+                  <a href="/duck/"> MENU 1</a>
+                </li>
+                <li class="nav-list-item">
+                  <a href="/fox/1/"> MENU 2</a>
+                </li>
+                <li class="nav-list-item">
+                  <a href="/weather-minsk/"> MENU 3</a>
+                </li>
+                <li class="nav-list-item">
+                  <a href="/weather/Moscow/"> MENU 4</a>
+                </li>
+                <li class="nav-list-item">
+                  <a href="/hw_4/">MENU 5</a>
+                </li>
+                {% if user_auth %}
+                    <li class="nav-list-item">
+                        <a href="/login/">LOGIN</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a href="/registration/">REGISTRATION</a>
+                    </li>
+                {% else %}
+                    <li class="nav-list-item">
+                        <a href="/logout/">Выход</a>
+                    </li>
+                {% endif %}
+
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+    <section class="img-main">
+        <div class="img-main-wrap">
+            <div class="conteiner">
+                <h1 class="title-main">Lorem ipsum dolor sit amet</h1>
+                <div class="text-main-wrap">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquam viverra nibh id condimentum. Quisque vitae elementum nunc. Integer ac tellus id turpis scelerisque eleifend. Suspendisse ligula est, porttitor sed enim id, feugiat pharetra nunc. Vestibulum in nisi tincidunt, consequat erat at, elementum est. Nullam at consequat tortor. Sed gravida massa est, eu luctus lacus porttitor ut. Nullam non augue nec turpis euismod sollicitudin. Duis vestibulum mattis nisl, et vestibulum metus rhoncus quis. Suspendisse potenti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

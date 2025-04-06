@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Document</title>
+</head>
+<body>
+  <header class="header">
+    <div class="conteiner">
+      <div class="header-wrap">
+        <div class="logo-wrap">
+          <p class="logo">HTML HW</p>
+        </div>
+        <nav class="nav-wrap">
+          <ul class="nav-list">
+            <li class="nav-list-item">
+              <a href="/"> MAIN PAGE</a>
+            </li>
+          </ul>
+        </nav>
+          <div class="user-img-text-wrap">
+          {% if user_text %}
+              <div class="nav-list-item-text">
+                <p class="a-wrap">{{ user_text }}</p>
+              </div>
+           {% endif %}
+           <div class="user-img-wrap">
+              <i class="fa-solid fa-user"></i>
+           </div>
+          </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+      <section class="hw1">
+        <div class="conteiner">
+          <p class="text-hw1">Joy of T<span class="text-hw1-E">E</span>X</p>
+        </div>
+      </section>
+      <section class="hw2">
+        <div class="conteiner">
+          <div class="poem-wrap">
+            <h2 class="poem-autor">Евгений Евтушенко</h2>
+            <div class="poem-year-wrap">
+              <p class="poem-year">— 1955 —</p>
+            </div>
+            <div class="poem-text-wrap">
+              <p class="poem-text">
+                Бывало, спит у ног собака,<br>
+                костер занявшийся гудит,<br>
+                и женщина из полумрака<br>
+                глазами злыми глядит.<br>
+              </p>
+              <p class="poem-text">
+                Потом под тихтоо прилетает<br>
+                на куртку рыжую мою<br>
+                и мне,<br>
+                <span class="offset1">задумчивая,</span><br>
+                <span class="offset2">скажет:</span><br>
+                «А ну-ка, спой!..» —<br>
+                <span class="offset3">и я пою.</span><br>
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      <section class="hw3">
+        <div class="conteiner">
+          <table class="hw3-table">
+            <caption class="hw3-title">Добыча драгоценных камней</caption>
+            <thead>
+                <tr class="hw3-tr">
+                    <th class="hw3-th"></th>
+                    <th class="hw3-th">2010</th>
+                    <th class="hw3-th">2012</th>
+                    <th class="hw3-th">2014</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hw3-tr">
+                    <td class="hw3-td">Сапфиры</td>
+                    <td class="hw3-td" rowspan="2">1483</td>
+                    <td class="hw3-td">4532</td>
+                    <td class="hw3-td">6743</td>
+                </tr>
+                <tr class="hw3-tr">
+                    <td class="hw3-td">Рубины</td>
+                    <td class="hw3-td">3835</td>
+                    <td class="hw3-td">7482</td>
+                </tr>
+                <tr class="hw3-tr">
+                    <td class="hw3-td">Алмазы</td>
+                    <td class="hw3-td">683</td>
+                    <td class="hw3-td" colspan="2">238</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+      </section>
+      <section class="hw4">
+        <div class="conteiner">
+          <table class="hw4-table">
+            <thead>
+                <tr class="hw4-tr">
+                    <th class="hw4-th"></th>
+                    <th class="hw4-th">2004</th>
+                    <th class="hw4-th">2005</th>
+                    <th class="hw4-th">2006</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hw4-tr">
+                    <td class="hw4-td">Рубины</td>
+                    <td class="hw4-td">43</td>
+                    <td class="hw4-td">51</td>
+                    <td class="hw4-td">79</td>
+                </tr>
+                <tr class="hw4-tr">
+                    <td class="hw4-td-color">Изумруды</td>
+                    <td class="hw4-td-color">28</td>
+                    <td class="hw4-td-color">34</td>
+                    <td class="hw4-td-color">48</td>
+                </tr>
+                <tr class="hw4-tr">
+                    <td class="hw4-td">Сапфиры</td>
+                    <td class="hw4-td">29</td>
+                    <td class="hw4-td">57</td>
+                    <td class="hw4-td">36</td>
+                </tr>
+                <tr class="hw4-tr">
+                  <td class="hw4-td-color">Аметисты</td>
+                  <td class="hw4-td-color">23</td>
+                  <td class="hw4-td-color">64</td>
+                  <td class="hw4-td-color">97</td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+      </section>
+      <section class="hw5">
+        <div class="conteiner">
+          <table class="hw5-table">
+            <thead>
+                <tr class="hw5-tr">
+                    <th class="hw5-th">Название</th>
+                    <th class="hw5-th">Цвет</th>
+                    <th class="hw5-th">Твердость по Моосу</th>
+                    <th class="hw5-th">Формула</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hw5-tr">
+                    <td class="hw5-td">Алмаз</td>
+                    <td class="hw5-td-color">Белый</td>
+                    <td class="hw5-td">10</td>
+                    <td class="hw5-td-color">С</td>
+                </tr>
+                <tr class="hw5-tr">
+                  <td class="hw5-td">Рубин</td>
+                  <td class="hw5-td-color">Красный</td>
+                  <td class="hw5-td">9</td>
+                  <td class="hw5-td-color">Al<span class="hw5-td-span">2</span>O<span class="hw5-td-span">3</span></td>
+                </tr>
+                <tr class="hw5-tr">
+                  <td class="hw5-td">Аметист</td>
+                  <td class="hw5-td-color">Голубой</td>
+                  <td class="hw5-td">7</td>
+                  <td class="hw5-td-color">SiO<span class="hw5-td-span">2</span></td>
+                </tr>
+                <tr class="hw5-tr">
+                  <td class="hw5-td">Изумруд</td>
+                  <td class="hw5-td-color">Зеленый</td>
+                  <td class="hw5-td">8</td>
+                  <td class="hw5-td-color">Be<span class="hw5-td-span">3</span>Al<span class="hw5-td-span">2</span>(SiO<span class="hw5-td-span">3</span>)<span class="hw5-td-span">6</span></td>
+                </tr>
+                <tr class="hw5-tr">
+                  <td class="hw5-td">Сапфир</td>
+                  <td class="hw5-td-color">Голубой</td>
+                  <td class="hw5-td">9</td>
+                  <td class="hw5-td-color">Al<span class="hw5-td-span">2</span>O<span class="hw5-td-span">3</span></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+      </section>
+      <section class="hw6">
+        <div class="conteiner">
+          <h2 class="hw6-title">Карта сокровищ</h2>
+          <div class="hw6-wrap">
+            <div class="hw6-img-wrap">
+              <img src="https://img.freepik.com/premium-vector/map-treasures-paper-parchment_8071-3421.jpg" alt="карта сокровищ">
+            </div>
+            <div class="progress-wrap">
+              <label for="progress">Пройдено:</label>
+              <progress id="progress" value="80" max="100"></progress>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hw7">
+        <div class="conteiner">
+          <h2 class="hw7-title">Химические элементы</h2>
+          <table class="hw7-table">
+            <thead>
+                <tr class="hw7-tr">
+                    <th class="hw7-th">Номер</th>
+                    <th class="hw7-th">Название</th>
+                    <th class="hw7-th">Символ</th>
+                    <th class="hw7-th">Год</th>
+                    <th class="hw7-th">Статья</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hw7-tr">
+                    <td class="hw7-td">1</td>
+                    <td class="hw7-td"><a href="#">Водород</a></td>
+                    <td class="hw7-td decor">H</td>
+                    <td class="hw7-td">1766</td>
+                    <td class="hw7-td">
+                      <a href="#">
+                        <i class="fa-regular fa-folder-open"></i>
+                      </a>
+                    </td>
+                </tr>
+
+                <tr class="hw7-tr">
+                  <td class="hw7-td">2</td>
+                  <td class="hw7-td"><a href="#">Гелий</a></td>
+                  <td class="hw7-td decor">He</td>
+                  <td class="hw7-td">1895</td>
+                  <td class="hw7-td">
+                    <a href="#">
+                      <i class="fa-regular fa-folder-open"></i>
+                    </a>
+                  </td>
+                </tr>
+
+                <tr class="hw7-tr">
+                  <td class="hw7-td">3</td>
+                  <td class="hw7-td"><a href="#">Бор</a></td>
+                  <td class="hw7-td decor">B</td>
+                  <td class="hw7-td">1808</td>
+                  <td class="hw7-td">
+                    <a href="#">
+                      <i class="fa-regular fa-folder-open"></i>
+                    </a>
+                  </td>
+                </tr>
+                
+            </tbody>
+        </table>
+        </div>
+      </section>
+      <section class="hw8">
+        <div class="conteiner">
+          <div class="hw8-wrap">
+            <h2 class="hw8-title">Генераторы</h2>
+            <ul class="hw8-list-wrap">
+              <li>Цвета
+                  <ul>
+                      <li class="hw8-color-item">Color Mixers</li>
+                      <li class="hw8-color-item">Color Mixers</li>
+                      <li class="hw8-color-item">Color Mixers</li>
+                  </ul>
+              </li>
+              <li>Фавиконы
+                  <ol>
+                      <li class="hw8-favicon-item">Favicon.cc
+                        <ul>
+                          <li class="hw8-favicon-link-item">
+                            <a href="#">Скачать</a>
+                          </li>
+                          <li class="hw8-favicon-link-item">
+                            <a href="#">Демо</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="hw8-favicon-item">WebLab Favicon</li>
+                  </ol>
+              </li>
+              <li>Фоны
+                  <ul>
+                      <li class="hw8-bg-item">BgMaker</li>
+                      <li class="hw8-bg-item">StripeGenerator</li>
+                  </ul>
+              </li>
+              <li>Изображения
+                <ol>
+                    <li class="hw8-img-item">Buttonator</li>
+                    <li class="hw8-img-item">AjaxLoad</li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="hw9">
+        <div class="conteiner">
+          <div class="hw9-title-desc-wrap">
+            <h2 class="hw9-title">Стихотворение</h2>
+            <div class="hw9-desc-wrap">
+              <p class="hw9-desc">
+                Мириады маленьких дел<br>
+                Пьют по капле гаснущий день,<br>
+                А <span class="hw9-desc-italic">дела большие</span> сушит жажда<br>
+                Осталяя все на "потом",<br>
+                Прозреваем задним числом,<br>
+                Только день <span class="hw9-desc-bold">не повторится</span> дважды.<br>
+              </p>
+              <p class="hw9-autor">
+                И.Тальков
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hw10">
+        <div class="conteiner">
+          <div class="hw10-wrap">
+            <h1>Заголовок первого уровня</h1>
+            <h2 class="hw10-h2">Заголовок второго уровня</h2>
+            <h3 class="hw10-h3">Заголовок третьего уровня</h3>
+            <p class="hw10-link">Пример ссылки <a class="link-color" href="#">ведущей на другую страницу</a></p>
+          </div>
+        </div>
+      </section>
+      <section class="hw11">
+        <div class="conteiner">
+          <div class="form-wrap">
+          <form action="#" method="post">
+
+            <div class="week-wrap">
+              <label for="week">Неделя:</label>
+              <input type="text" id="week" name="week" placeholder="Неделя 09, 2016">
+            </div>
+
+            <div class="datetime-wrap">
+              <label for="datetime">Дата и времени:</label>
+              <input type="datetime-local" id="datetime" name="datetime" value="2016-03-17T09:50">
+            </div>
+              
+            <div class="month-wrap">
+              <label for="month">Месяц:</label>
+              <select id="month" name="month">
+                <option value="Март">Март 2016</option>
+                <option value="Апрель">Апрель 2016</option>
+                <option value="Май">Май 2016</option>
+              </select>
+            </div>
+            
+            <div class="time-wrap">
+              <label for="time">Время:</label>
+              <input type="time" id="time" name="time" value="22:19">
+            </div>
+
+            <button class="hw11-btm">Отправить</button>
+          </form>
+          </div>
+        </div>
+      </section>
+      <section class="hw12">
+        <div class="conteiner">
+          <div class="hw12-title-form-wrap">
+            <div class="hw12-title-wrap">
+              <h2 class="hw12-title">Форма заявки на работу в зоопарке</h2>
+              <p class="hw12-title-desc">Пожалуйста, заполните форму. Обязательные поля помечены <span class="necessarily">*</span></p>
+            </div>
+            <form action="#" method="post">
+              <fieldset>
+                  <legend>Контактная информация</legend>
+
+                  <div class="contacts-wrap">
+                    <div class="name-wrap">
+                      <label for="name">Имя<span style="color:red">*</span></label>
+                      <input class="contacts-input" type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="phone-wrap">
+                      <label for="phone">Телефон</label>
+                      <input class="contacts-input" type="text" id="phone" name="phone">
+                    </div>
+
+                    <div class="email-wrap">
+                      <label for="email">Email<span style="color:red">*</span></label>
+                      <input class="contacts-input" type="email" id="email" name="email" required>
+                    </div>
+  
+                  </div>
+              </fieldset>
+      
+              <fieldset>
+                  <legend>Персональная информация</legend>
+
+                  <div class="personal-wrap">
+                    <div class="age-wrap">
+                      <label for="age">Возраст<span style="color:red">*</span></label>
+                      <input class="personal-input" type="number" id="age" name="age" required>
+                    </div>
+                    
+                    <div class="gender-wrap">
+                      <label for="gender">Пол</label>
+                      <select id="gender" name="gender">
+                        <option value="female">Женщина</option>
+                        <option value="male">Мужчина</option>
+                      </select>
+                    </div>
+
+                    <div class="qualities-wrap">
+                      <label for="qualities">Перечислите личные качества</label>
+                      <textarea id="qualities" name="qualities" ></textarea>
+                    </div>
+  
+                  </div>   
+              </fieldset>
+      
+              <fieldset>
+                  <legend>Выберите ваших любимых животных</legend>
+
+                  <div class="animals-wrap">
+                    
+                    <div class="animals">
+                      <input type="checkbox" id="zebra" name="animals" value="Зебра">
+                      <label for="zebra">Зебра</label>
+                    </div>
+                    
+                    <div class="animals">
+                      <input type="checkbox" id="cat" name="animals" value="Кошка">
+                      <label for="cat">Кошак</label>
+                    </div>
+
+                    <div class="animals">
+                      <input type="checkbox" id="anaconda" name="animals" value="Анаконда">
+                      <label for="anaconda">Анаконда</label>
+                    </div>
+
+                    <div class="animals">
+                      <input type="checkbox" id="human" name="animals" value="Человек">
+                      <label for="human">Человек</label>
+                    </div>
+
+                    <div class="animals">
+                      <input type="checkbox" id="elephant" name="animals" value="Слон">
+                      <label for="elephant">Слон</label>
+                    </div>
+
+                    <div class="animals">
+                      <input type="checkbox" id="antelope" name="animals" value="Антилопа">
+                      <label for="antelope">Антилопа</label>
+                    </div>
+
+                    <div class="animals">
+                      <input type="checkbox" id="pigeon" name="animals" value="Голубь">
+                      <label for="pigeon">Голубь</label>
+                    </div>
+
+                    <div class="animals">
+                      <input type="checkbox" id="crab" name="animals" value="Краб">
+                      <label for="crab">Краб</label>
+                    </div>
+  
+                  </div>     
+              </fieldset>
+
+              <button class="hw12-form-btn" type="submit">Отправить информацию</button>
+          </form>
+          </div>
+          
+        </div>
+      </section>
+  </main>
+</body>
+</html>

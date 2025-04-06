@@ -1,0 +1,40 @@
+.hw2{
+  margin-bottom: 20px;
+}
+.poem-wrap {
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.poem-autor {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+}
+
+.poem-year-wrap {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.poem-text {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.offset1 {
+  margin-left: 25px;
+}
+
+.offset2 {
+  margin-left: 95px;
+}
+
+.offset3 {
+  margin-left: 140px;
+}

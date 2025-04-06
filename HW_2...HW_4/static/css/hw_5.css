@@ -1,0 +1,45 @@
+.hw5 {
+  background-color: rgb(232, 233, 236);
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.hw5-table {
+  margin: auto;
+  width: 50%;
+  border-collapse: collapse;
+  background-color: #f1f1f1;
+}
+.hw5-tr {
+  border: 1px solid #363636;
+  padding: 10px;
+  text-align: center;
+}
+
+.hw5-td {
+  border: 1px solid #363636;
+  background-color: #8fe6e1;
+  padding: 10px;
+  text-align: center;
+}
+.hw5-td-color {
+  border: 1px solid #363636;
+  background-color: #faf3ab;
+  padding: 10px;
+  text-align: center;
+}
+.hw5-td-span {
+  position: relative;
+  top: 5px;
+  font-size: 12px;
+}
+.hw5-th {
+  background-color: #5c5656;
+  color: #f1f1f1;
+  border: 1px solid #363636;
+  padding: 10px;
+}
+.hw5-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0;
+}

@@ -1,0 +1,72 @@
+@import url(header.css);
+@import url(hw_1.css);
+@import url(hw_2.css);
+@import url(hw_3.css);
+@import url(hw_4.css);
+@import url(hw_5.css);
+@import url(hw_6.css);
+@import url(hw_7.css);
+@import url(hw_8.css);
+@import url(hw_9.css);
+@import url(hw_10.css);
+@import url(hw_11.css);
+@import url(hw_12.css);
+@import url(duck.css);
+@import url(fox.css);
+@import url(weather_city.css);
+@import url(login.css);
+@import url(registration.css);
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box; 
+}
+
+.conteiner {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: auto;
+  z-index: 4;
+  position: relative;
+}
+
+.img-main {
+    width: 100%;
+    height: 100vh; /* или другая нужная высота */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-main-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.wallpapersafari.com/18/71/UMaRof.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-main-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+.title-main{
+    color: #ffffff;
+    font-size: 30px;
+    padding-top: 20px;
+}
+.text-main-wrap {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+

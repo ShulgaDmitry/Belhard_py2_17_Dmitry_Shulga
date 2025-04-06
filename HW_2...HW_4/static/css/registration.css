@@ -1,0 +1,108 @@
+.error{
+  color: red;
+}
+.registration-form {
+  width: 300px;
+  margin: 0 auto;
+}
+.registration-fieldset{
+  /*background-color: #d7cfe1;*/
+  border-radius: 10px;
+  border: 1px solid blueviolet;
+}
+.registration-legend{
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  color: #5403a3;
+}
+
+.registration-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.login-wrap,
+.name-wrap,
+.email-wrap,
+.age-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.login-label,
+.name-label,
+.email-label,
+.age-label {
+  width: 100px;
+  font-size: 18px;
+  color: #5403a3;
+}
+.login-input,
+.name-input,
+.email-input,
+.age-input{
+  width: 300px;
+  height: 30px;
+  padding: 5px 10px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+}
+.password-wrap{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.password-label {
+  width: 100px;
+  font-size: 18px;
+  color: #5403a3;
+}
+
+.password-input {
+  width: 300px;
+  height: 30px;
+  padding: 5px 10px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+}
+
+.login-input:focus{
+  /* срабатывает только когда элемент в фокусе */
+  background-color: rgb(232 208 253);
+}
+
+.btn-wrap{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.login-btn-submit,
+.registration-btn-submit{
+  width: 150px;
+  height: 30px;
+  padding: 5px 10px;
+  background-color: blueviolet;
+  border-radius: 10px;
+  color: #f1f1f1;
+  border: none;
+  font-family: "Times New Roman";
+  font-size: 18px;
+  margin-top: 20px;
+}
+.login-btn-reset,
+.registration-btn-reset{
+  width: 150px;
+  height: 30px;
+  padding: 5px 10px;
+  background-color: blueviolet;
+  border-radius: 10px;
+  color: #f1f1f1;
+  border: none;
+  font-family: "Times New Roman";
+  font-size: 18px;
+  margin-top: 20px;
+}

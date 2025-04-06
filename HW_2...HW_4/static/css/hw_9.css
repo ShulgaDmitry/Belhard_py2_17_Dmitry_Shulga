@@ -1,0 +1,29 @@
+.hw9 {
+  background-color: rgb(245, 245, 244);
+  padding: 15px 0;
+  
+}
+.hw9-title-desc-wrap{
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hw9-title {
+  margin-bottom: 20px;
+}
+
+.hw9-desc {
+  margin-bottom: 20px;
+}
+
+.hw9-desc-italic{
+ font-style: italic;
+}
+
+.hw9-desc-bold{
+  font-weight: 700;
+}

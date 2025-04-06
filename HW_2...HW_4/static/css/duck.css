@@ -1,0 +1,38 @@
+.user-img-text-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-img-wrap {
+  width: 40px;
+  height: 40px;
+  background-color: #cccccc;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-solid {
+  font-size: 20px;
+  color: blueviolet;
+}
+
+.duck-img-wrap {
+  margin: 0 auto;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+
+.duck-img-wrap img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+ }

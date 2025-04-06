@@ -1,0 +1,14 @@
+.hw1 {
+  background-color: rgb(232, 233, 236);
+  padding: 20px 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.text-hw1{
+  font-size: 24px;
+}
+.text-hw1-E {
+  position: relative;
+  top: 10px;
+}

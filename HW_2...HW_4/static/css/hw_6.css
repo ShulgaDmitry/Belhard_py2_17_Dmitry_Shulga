@@ -1,0 +1,28 @@
+.hw6 {
+  background-color: rgb(232, 233, 236);
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+.hw6-title {
+  margin-bottom: 20px;
+}
+.hw6-wrap {
+  padding: 20px 0;
+  width: 700px;
+  border-top: 1px solid rgb(58, 58, 58);
+  border-bottom: 1px solid rgb(58, 58, 58);
+}
+.hw6-img-wrap {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.hw6-img-wrap img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-position: center;
+}

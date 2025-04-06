@@ -1,0 +1,36 @@
+.hw4 {
+  background-color: rgb(232, 233, 236);
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.hw4-table {
+  margin: auto;
+  width: 50%;
+  border-collapse: collapse;
+  background-color: #f1f1f1;
+}
+.hw4-tr {
+  border: 2px solid #8b3131;
+  padding: 10px;
+  text-align: center;
+} 
+.hw4-td {
+  padding: 10px;
+  text-align: center;
+}
+
+.hw4-td-color {
+  padding: 10px;
+  text-align: center;
+  background-color: #f9fbc5;
+}
+.hw4-th {
+  background-color: #8b3131;
+  padding: 10px;
+  color: #f1f1f1;
+}
+.hw4-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0;
+}
