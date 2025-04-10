@@ -1,4 +1,6 @@
 .error{
+  width: 300px;
+  margin: 0 auto;
   color: red;
 }
 .registration-form {
@@ -14,7 +16,7 @@
   font-size: 18px;
   font-weight: bold;
   padding: 10px;
-  color: #5403a3;
+  color: blueviolet;
 }
 
 .registration-wrap{
@@ -38,7 +40,7 @@
 .age-label {
   width: 100px;
   font-size: 18px;
-  color: #5403a3;
+  color: blueviolet;
 }
 .login-input,
 .name-input,
@@ -59,7 +61,7 @@
 .password-label {
   width: 100px;
   font-size: 18px;
-  color: #5403a3;
+  color: blueviolet;
 }
 
 .password-input {

@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Weather_city</title>
-</head>
-<body>
+{% extends 'index.html' %}
+{% block menu %}
     <header class="header">
         <div class="conteiner">
           <div class="header-wrap">
             <div class="logo-wrap">
-              <p class="logo">WEATHER CITY</p>
+              <p class="logo">FOX PAGE</p>
             </div>
             <nav class="nav-wrap">
               <ul class="nav-list">
@@ -33,19 +26,23 @@
           </div>
         </div>
     </header>
-    </div>
-    <section class="weather">
+{% endblock %}
+{% block content %}
+    <section class="fox-section">
         <div class="conteiner">
-            <div class="weather-wrap">
+            <div class="fox-img-wrap-flex">
                 {% if text == "true" %}
-                    <h2 class="weather-title">Данного города не найдено</h2>
+                <div class="conteiner">
+                    <h1 class="title-main">Можно только от 1 до 10</h1>
+                </div>
                 {% else %}
-                <h3 class="weather-title">City: {{ city }}</h3>
-                <p class="weather-param">Weather: {{ weather }}</p>
-                <p class="degrees1">Temperature: {{ degrees1 }} {{ degrees2 }}</p>
+                    {% for image in images%}
+                        <div class="fox-img-wrap">
+                            <img src = "{{image}}" alt="123">
+                        </div>
+                    {%endfor%}
                 {% endif %}
-            </div>
+        </div>
         </div>
     </section>
-</body>
-</html>
+{% endblock %}

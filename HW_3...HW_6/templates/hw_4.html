@@ -1,39 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <title>Document</title>
-</head>
-<body>
-  <header class="header">
-    <div class="conteiner">
-      <div class="header-wrap">
-        <div class="logo-wrap">
-          <p class="logo">HTML HW</p>
-        </div>
-        <nav class="nav-wrap">
-          <ul class="nav-list">
-            <li class="nav-list-item">
-              <a href="/"> MAIN PAGE</a>
-            </li>
-          </ul>
-        </nav>
-          <div class="user-img-text-wrap">
-          {% if user_text %}
-              <div class="nav-list-item-text">
-                <p class="a-wrap">{{ user_text }}</p>
+{% extends 'index.html' %}
+{% block menu %}
+    <header class="header">
+        <div class="conteiner">
+          <div class="header-wrap">
+            <div class="logo-wrap">
+              <p class="logo">HTML HW</p>
+            </div>
+            <nav class="nav-wrap">
+              <ul class="nav-list">
+                <li class="nav-list-item">
+                  <a href="/"> MAIN PAGE</a>
+                </li>
+              </ul>
+            </nav>
+              <div class="user-img-text-wrap">
+              {% if user_text %}
+                  <div class="nav-list-item-text">
+                    <p class="a-wrap">{{ user_text }}</p>
+                  </div>
+               {% endif %}
+               <div class="user-img-wrap">
+                  <i class="fa-solid fa-user"></i>
+               </div>
               </div>
-           {% endif %}
-           <div class="user-img-wrap">
-              <i class="fa-solid fa-user"></i>
-           </div>
           </div>
-      </div>
-    </div>
-  </header>
+        </div>
+    </header>
+{% endblock %}
+{% block section %}
   <main class="main">
       <section class="hw1">
         <div class="conteiner">
@@ -65,7 +59,7 @@
               </p>
             </div>
           </div>
-          
+
         </div>
       </section>
       <section class="hw3">
@@ -250,7 +244,7 @@
                     </a>
                   </td>
                 </tr>
-                
+
             </tbody>
         </table>
         </div>
@@ -342,7 +336,7 @@
               <label for="datetime">Дата и времени:</label>
               <input type="datetime-local" id="datetime" name="datetime" value="2016-03-17T09:50">
             </div>
-              
+
             <div class="month-wrap">
               <label for="month">Месяц:</label>
               <select id="month" name="month">
@@ -351,7 +345,7 @@
                 <option value="Май">Май 2016</option>
               </select>
             </div>
-            
+
             <div class="time-wrap">
               <label for="time">Время:</label>
               <input type="time" id="time" name="time" value="22:19">
@@ -378,7 +372,7 @@
                       <label for="name">Имя<span style="color:red">*</span></label>
                       <input class="contacts-input" type="text" id="name" name="name" required>
                     </div>
-                    
+
                     <div class="phone-wrap">
                       <label for="phone">Телефон</label>
                       <input class="contacts-input" type="text" id="phone" name="phone">
@@ -388,10 +382,10 @@
                       <label for="email">Email<span style="color:red">*</span></label>
                       <input class="contacts-input" type="email" id="email" name="email" required>
                     </div>
-  
+
                   </div>
               </fieldset>
-      
+
               <fieldset>
                   <legend>Персональная информация</legend>
 
@@ -400,7 +394,7 @@
                       <label for="age">Возраст<span style="color:red">*</span></label>
                       <input class="personal-input" type="number" id="age" name="age" required>
                     </div>
-                    
+
                     <div class="gender-wrap">
                       <label for="gender">Пол</label>
                       <select id="gender" name="gender">
@@ -413,20 +407,20 @@
                       <label for="qualities">Перечислите личные качества</label>
                       <textarea id="qualities" name="qualities" ></textarea>
                     </div>
-  
-                  </div>   
+
+                  </div>
               </fieldset>
-      
+
               <fieldset>
                   <legend>Выберите ваших любимых животных</legend>
 
                   <div class="animals-wrap">
-                    
+
                     <div class="animals">
                       <input type="checkbox" id="zebra" name="animals" value="Зебра">
                       <label for="zebra">Зебра</label>
                     </div>
-                    
+
                     <div class="animals">
                       <input type="checkbox" id="cat" name="animals" value="Кошка">
                       <label for="cat">Кошак</label>
@@ -461,16 +455,15 @@
                       <input type="checkbox" id="crab" name="animals" value="Краб">
                       <label for="crab">Краб</label>
                     </div>
-  
-                  </div>     
+
+                  </div>
               </fieldset>
 
               <button class="hw12-form-btn" type="submit">Отправить информацию</button>
           </form>
           </div>
-          
+
         </div>
       </section>
   </main>
-</body>
-</html>
+{% endblock %}
