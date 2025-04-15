@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block menu %}
+    <header class="header">
+        <div class="conteiner">
+          <div class="header-wrap">
+            <div class="logo-wrap">
+              <p class="logo">QUIZ</p>
+            </div>
+              <nav class="nav-wrap">
+                  <ul class="nav-list">
+                    <li class="nav-list-item">
+                      <a href="/"> MAIN PAGE </a>
+                    </li >
+                    <li class="nav-list-item">
+                      <a href="/editor/"> EDITOR </a>
+                    </li>
+                  </ul>
+              </nav>
+          </div>
+        </div>
+    </header>
+{% endblock %}
+{% block content1 %}
+<div class="form-additional-content">
+    <div class="quiz_form">
+        <form action="/quiz/" method="post">
+            <div class="start-wrap">
+                <h2>Выберите КВИЗ</h2>
+                <select name="quiz" >
+                    {% for q in quizes %}
+                        <option value="{{ q.id }}"> {{ q.name }}</option>
+                    {% endfor%}
+                </select>
+                <div>
+                    <input class="button" type="submit" value ='Начать КВИЗ'>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

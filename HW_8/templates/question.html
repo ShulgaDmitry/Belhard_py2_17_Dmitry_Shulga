@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content1 %}
+<div class="form-additional-content">
+    <div class="question_form">
+        <h2>{{question.question}}</h2>
+        <form action="/question/" method="post">
+            {% for answer in answers%}
+            <div class="answer_row">
+                <input type="radio" name="ans_text" id = 'radio{{loop.index}}' value="{{answer}}">
+                <label for="radio{{loop.index}}">{{ answer }}</label>
+            </div>
+            {% endfor %}
+            <input class="button" type="submit" value="Ответить">
+        </form>
+    </div>
+</div>
+{% endblock %}

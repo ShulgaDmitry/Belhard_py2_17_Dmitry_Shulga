@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block menu %}
+    <header class="header">
+        <div class="conteiner">
+          <div class="header-wrap">
+            <div class="logo-wrap">
+              <p class="logo">QUESTION EDITOR PAGE</p>
+            </div>
+              <nav class="nav-wrap">
+                  <ul class="nav-list">
+                    <li class="nav-list-item">
+                      <a href="/quiz/"> QUIZ </a>
+                    </li >
+                  </ul>
+              </nav>
+          </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content1 %}
+<div class="additional-content">
+    <form action="{{ url_for('delete_question', question_id=question.id) }}" method="post" style="display:inline;">
+        <button class="btn-modal" type="submit" onclick="return confirm('Удалить вопрос?')">Удалить</button>
+    </form>
+    <label for="modal-two" class="btn-modal">Изменить вопрос</label>
+        <input type="checkbox" id="modal-two" class="modal-toggle" hidden>
+
+        <div class="modal">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    Заголовок модального окна
+                    <label for="modal-two" class="btn-close">×</label>
+                </div>
+                <div class="modal-body">
+                    Содержимое модального окна
+                    <form action="" method="post">
+                        <fieldset>
+                            <legend>Изменить вопрос</legend>
+                            <input type="hidden" name="question_id" value="{{ question.id }}">
+                            <input type="text" name="question_new" value="{{ question.question }}">
+                            <input type="text" name="answer_new" value="{{ question.answer }}">
+                            <input type="text" name="wrong1_new" value="{{ question.wrong1 }}">
+                            <input type="text" name="wrong2_new" value="{{ question.wrong2 }}">
+                            <input type="text" name="wrong3_new" value="{{ question.wrong3 }}">
+                            <br>
+                            <button type="submit">Добавить</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <div class="quiz-table-section">
+        <div class="conteiner">
+            <table class="quiz-table">
+                <thead>
+                    <tr class="quiz-tr">
+                        <th class="quiz-th">Номер</th>
+                        <th class="quiz-th">Вопрос</th>
+                        <th class="quiz-th">Ответ</th>
+                        <th class="quiz-th">Вариант 1</th>
+                        <th class="quiz-th">Вариант 2</th>
+                        <th class="quiz-th">Вариант 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr class="quiz-tr">
+                            <td class="quiz-td">{{ question.id }}</td>
+                            <td class="quiz-td-color">{{ question.question }}</td>
+                            <td class="quiz-td">{{ question.answer }}</td>
+                            <td class="quiz-td">{{ question.wrong1 }}</td>
+                            <td class="quiz-td">{{ question.wrong2 }}</td>
+                            <td class="quiz-td">{{ question.wrong3 }}</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

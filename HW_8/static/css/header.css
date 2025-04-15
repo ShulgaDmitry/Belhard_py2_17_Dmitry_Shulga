@@ -1,0 +1,30 @@
+.header {
+  background-color: blueviolet;
+  padding: 15px 0;
+  /*margin-bottom: 20px;*/
+}
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 700;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+.nav-list-item a {
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.nav-list-item-text {
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+}

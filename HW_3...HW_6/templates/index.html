@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Main page</title>
-</head>
-<body>
-    {% block menu %}
+{% extends 'base.html' %}
+{% block menu %}
     <header class="header">
         <div class="conteiner">
           <div class="header-wrap">
@@ -51,35 +42,12 @@
           </div>
         </div>
     </header>
-    {% endblock %}
-    {% block section %}
-    <section class="img-main">
-        <div class="img-main-wrap">
-            {% block content %}
-            <div class="conteiner">
-                <h1 class="title-main">Lorem ipsum dolor sit amet</h1>
-                <div class="text-main-wrap">
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquam viverra nibh id condimentum. Quisque vitae elementum nunc. Integer ac tellus id turpis scelerisque eleifend. Suspendisse ligula est, porttitor sed enim id, feugiat pharetra nunc. Vestibulum in nisi tincidunt, consequat erat at, elementum est. Nullam at consequat tortor. Sed gravida massa est, eu luctus lacus porttitor ut. Nullam non augue nec turpis euismod sollicitudin. Duis vestibulum mattis nisl, et vestibulum metus rhoncus quis. Suspendisse potenti.</p>
-                </div>
-            </div>
-            {% endblock %}
-        </div>
-    </section>
-    {% endblock %}
-    <footer class="footer">
-        <div class="conteiner">
-            <div class="footer-wrap">
-                    <p class="footer-list-item-text">&copy; 2025 Your Company Name. All rights reserved.</p>
-                    <ul class="footer-list">
-                        <li class="footer-list-item">
-                            <a href="#">Privacy Policy</a>
-                        </li>
-                        <li class="footer-list-item">
-                            <a href="#">Terms of Service</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+{% endblock %}
+{% block content %}
+<div class="conteiner">
+    <h1 class="title-main">Lorem ipsum dolor sit amet</h1>
+    <div class="text-main-wrap">
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquam viverra nibh id condimentum. Quisque vitae elementum nunc. Integer ac tellus id turpis scelerisque eleifend. Suspendisse ligula est, porttitor sed enim id, feugiat pharetra nunc. Vestibulum in nisi tincidunt, consequat erat at, elementum est. Nullam at consequat tortor. Sed gravida massa est, eu luctus lacus porttitor ut. Nullam non augue nec turpis euismod sollicitudin. Duis vestibulum mattis nisl, et vestibulum metus rhoncus quis. Suspendisse potenti.</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block menu %}
+    <header class="header">
+        <div class="conteiner">
+            <div class="header-wrap">
+                <div class="logo-wrap">
+                    <p class="logo">QUIZ EDITOR PAGE</p>
+                </div>
+                <nav class="nav-wrap">
+                    <ul class="nav-list">
+                        <li class="nav-list-item">
+                            <a href="/quiz/"> QUIZ </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content1 %}
+<div class="additional-content">
+    <form action="{{ url_for('delete_quiz', quiz_id=quiz.id) }}" method="post" style="display:inline;">
+        <button class="btn-modal" type="submit" onclick="return confirm('Удалить квиз?')">Удалить</button>
+    </form>
+    <label for="modal-one" class="btn-modal">Изменить название Quiz</label>
+        <input type="checkbox" id="modal-one" class="modal-toggle" hidden>
+
+        <div class="modal">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    Заголовок модального окна
+                    <label for="modal-one" class="btn-close">×</label>
+                </div>
+                <div class="modal-body">
+                    Содержимое модального окна
+                    <form action="" method="post">
+                        <fieldset>
+                            <legend>Изменить название quiz</legend>
+                            <input type="hidden" name="quiz_id" value="{{ quiz.id }}">
+                            <input type="text" name="new_quiz" value="{{ quiz.name }}">
+                            <button type="submit">Изменить</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <div class="conteiner">
+        <table class="quiz-table">
+            <thead>
+                <tr class="quiz-tr">
+                    <th class="quiz-th">Номер</th>
+                    <th class="quiz-th">Название Quiz</th>
+                    <th class="quiz-th">Количество вопросов</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr class="quiz-tr">
+                        <td class="quiz-td">{{ quiz.id }}</td>
+                        <td class="quiz-td-color">{{ quiz.name }}</td>
+                        <td class="quiz-td">{{ quiz.question|length }}</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+     <div class="quiz-table-section">
+        <div class="conteiner">
+            <table class="quiz-table">
+                <thead>
+                    <tr class="quiz-tr">
+                        <th class="quiz-th">#</th>
+                        <th class="quiz-th">Номер</th>
+                        <th class="quiz-th">Вопрос</th>
+                        <th class="quiz-th">Ответ</th>
+                        <th class="quiz-th">Вариант 1</th>
+                        <th class="quiz-th">Вариант 2</th>
+                        <th class="quiz-th">Вариант 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for question in question_quiz %}
+                        <tr class="quiz-tr">
+                            <td class="quiz-td">
+                                <form method="post" action="{{ url_for('toggle_question') }}">
+                                    <input type="hidden" name="question_id" value="{{ question.id }}">
+                                    <input type="checkbox" name="toggle" onchange="this.form.submit()" {% if question in quiz.question %}checked{% endif %}>
+                                </form>
+                            </td>
+                            <td class="quiz-td">{{ question.id }}</td>
+                            <td class="quiz-td-color">{{ question }}</td>
+                            <td class="quiz-td">{{ question.answer }}</td>
+                            <td class="quiz-td">{{ question.wrong1 }}</td>
+                            <td class="quiz-td">{{ question.wrong2 }}</td>
+                            <td class="quiz-td">{{ question.wrong3 }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="quiz-table-section">
+        <div class="conteiner">
+            <table class="quiz-table">
+                <thead>
+                    <tr class="quiz-tr">
+                        <th class="quiz-th">#</th>
+                        <th class="quiz-th">Номер</th>
+                        <th class="quiz-th">Вопрос</th>
+                        <th class="quiz-th">Ответ</th>
+                        <th class="quiz-th">Вариант 1</th>
+                        <th class="quiz-th">Вариант 2</th>
+                        <th class="quiz-th">Вариант 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for question in questions %}
+                        <tr class="quiz-tr">
+                            <td class="quiz-td">
+                                <form method="post" action="{{ url_for('toggle_question') }}">
+                                    <input type="hidden" name="question_id" value="{{ question.id }}">
+                                    <input type="checkbox" name="toggle" onchange="this.form.submit()" {% if question in quiz.question %}checked{% endif %}>
+                                </form>
+                            </td>
+                            <td class="quiz-td">{{ question.id }}</td>
+                            <td class="quiz-td-color">{{ question }}</td>
+                            <td class="quiz-td">{{ question.answer }}</td>
+                            <td class="quiz-td">{{ question.wrong1 }}</td>
+                            <td class="quiz-td">{{ question.wrong2 }}</td>
+                            <td class="quiz-td">{{ question.wrong3 }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

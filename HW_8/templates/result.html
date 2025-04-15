@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content1 %}
+<div class="form-additional-content">
+    <div class="result_form">
+        <h1>Ваш результат:</h1>
+        <div class="result"><h3>{{ right }} правильных ответов из {{ total }}</h3></div>
+        <a  href="{{url_for('view_quiz')}}" class="button"> В начало </a>
+    </div>
+</div>
+{% endblock %}
+
