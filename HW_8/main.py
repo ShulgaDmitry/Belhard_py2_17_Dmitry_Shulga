@@ -231,4 +231,4 @@ def delete_question(question_id):
     return redirect(url_for('question_editor'))
 
 
-app.run(debug=True)
+app.run(debug=True, host='0.0.0.0')
