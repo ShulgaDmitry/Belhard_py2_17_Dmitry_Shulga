@@ -26,8 +26,8 @@ app.config['SECRET_KEY'] = 'secretkeysecretkeysecretkey1212121'
 db.init_app(app)
 
 
-with app.app_context():
-    db_add_new_data()
+# with app.app_context():
+#     db_add_new_data()
 
 
 @app.route('/', methods = ['GET'])
