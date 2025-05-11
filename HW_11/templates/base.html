@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app1/css/index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    {% block menu %}
+
+    {% endblock %}
+    <main class="img-main">
+        <section class="img-main-wrap">
+            <div>
+                {% block content1 %}
+
+                {% endblock %}
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="conteiner">
+            <div class="footer-wrap">
+                    <p class="footer-list-item-text">&copy; 2025 Your Company Name. All rights reserved.</p>
+                    <ul class="footer-list">
+                        <li class="footer-list-item">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#">Terms of Service</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

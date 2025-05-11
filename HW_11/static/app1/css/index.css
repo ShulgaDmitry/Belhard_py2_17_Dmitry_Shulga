@@ -1,0 +1,72 @@
+@import url(header.css);
+@import url(footer.css);
+@import url(students.css);
+@import url(login.css);
+
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box; 
+}
+
+.conteiner {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: auto;
+    z-index: 4;
+    position: relative;
+}
+
+.img-main {
+    width: 100%;
+    height: auto;
+    min-height: 100vh; /* или другая нужная высота */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-main-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-image: url('https://i.pinimg.com/originals/ed/cf/fd/edcffdeb31bf2babb29e7bda2ea4b28c.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-main-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0, 0, 0, 0.1);*/
+    z-index: 2;
+}
+
+a {
+    position: relative;
+    z-index: 3;
+}
+
+.title-main{
+    color: #ffffff;
+    font-size: 30px;
+    padding-top: 20px;
+}
+.text-main-wrap {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.additional-content {
+    position: relative;
+    z-index: 3;
+}
+
+

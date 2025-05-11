@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block menu %}
+    <header class="header">
+        <div class="conteiner">
+          <div class="header-wrap">
+            <div class="logo-wrap">
+              <p class="logo">MAIN PAGE</p>
+            </div>
+              <nav class="nav-wrap">
+                  <ul class="nav-list">
+                    <li class="nav-list-item">
+                      <a href="/"> MAIN PAGE </a>
+                    </li>
+                    <li class="nav-list-item">
+                      <a href="/admin/"> ADMIN PANEL </a>
+                    </li>
+                    <li class="nav-list-item">
+                      <a href="/users/login/"> LOG IN </a>
+                    </li>
+                  </ul>
+              </nav>
+          </div>
+        </div>
+    </header>
+{% endblock %}
+{% block content1 %}
+<div class="conteiner">
+    <table class="students">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>ФИО</th>
+                <th>Возраст</th>
+                <th>Пол</th>
+                <th>ФОТО</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in students %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'app1:student' s.slug %}">{{ s.name }} {{ s.surname }}</a></td>
+                <td>{{ s.age }}</td>
+                <td>{{ s.get_sex_display }}</td>
+                <td>
+                {% if s.photo %}
+                    <img class="img-student thumb" src="{{ s.photo.url }}" alt="Нету">
+                {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">List of students is empty</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

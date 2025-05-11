@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block menu %}
+    <header class="header">
+        <div class="conteiner">
+          <div class="header-wrap">
+            <div class="logo-wrap">
+              <p class="logo">MAIN PAGE</p>
+            </div>
+              <nav class="nav-wrap">
+                  <ul class="nav-list">
+                    <li class="nav-list-item">
+                      <a href="/students/"> STUDENTS </a>
+                    </li >
+                    <li class="nav-list-item">
+                      <a href="/admin/"> ADMIN PANEL </a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <div class="nav-list-item-text">
+                            <p>Hello, {{ user.username }}</p>
+                        </div>
+                        <li class="nav-list-item">
+<!--                            <a href="/users/logout/"> LOG out </a>-->
+                            <a href="{% url 'users:logout' %}"> LOG OUT </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-list-item">
+<!--                            <a href="/users/login/"> LOG IN </a>-->
+                            <a href="{% url 'users:login' %}"> LOG IN </a>
+                        </li>
+                    {% endif %}
+                  </ul>
+              </nav>
+          </div>
+        </div>
+    </header>
+{% endblock %}

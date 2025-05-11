@@ -1,0 +1,70 @@
+.form-container {
+    background-color: #ffffff;
+    border-radius: 10px; /* Закругленные углы */
+    padding: 30px;
+    margin: 20px auto;
+    width: 400px; /* Ширина формы */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень */
+    position: relative;
+    z-index: 3;
+}
+
+.error-message {
+    color: red; /* Цвет сообщения об ошибке */
+    text-align: center; /* Центрирование текста */
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Отступ между группами */
+}
+
+.form-group label {
+    display: block; /* Блочный элемент для меток */
+    margin-bottom: 5px; /* Отступ между меткой и полем ввода */
+    font-weight: bold; /* Полужирный шрифт для меток */
+}
+
+.form-input {
+    width: 100%; /* Поля на всю ширину формы */
+    padding: 12px; /* Увеличенные отступы */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Учет отступов и рамок в ширине */
+    font-size: 16px; /* Размер шрифта */
+    transition: border-color 0.3s; /* Плавный переход цвета рамки */
+}
+
+.form-input:focus {
+    border-color: blueviolet; /* Цвет рамки при фокусе */
+    outline: none; /* Убрать стандартный контур */
+}
+
+.submit-button {
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%; /* Кнопка на всю ширину */
+    font-size: 16px; /* Размер шрифта */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+.submit-button:hover {
+    background-color: blueviolet; /* Темнее при наведении */
+}
+
+.username-password {
+    color: blueviolet;
+}
+
+.logout-message {
+    color: blueviolet; /* Цвет сообщения об ошибке */
+    text-align: center; /* Центрирование текста */
+    margin: 40px auto; /* Отступ снизу */
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}

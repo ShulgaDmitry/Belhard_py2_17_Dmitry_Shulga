@@ -1,0 +1,54 @@
+.students {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 16px;
+    text-align: center;
+    font-size: 22px;
+    color: rebeccapurple;
+    font-weight: bold;
+}
+
+.students th, .students td {
+    padding: 12px 15px;
+    border: 2px solid mediumpurple;
+}
+
+.students th {
+    background-color: blueviolet;
+    color: white;
+}
+
+.students tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.img-student {
+    max-width: 80px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.st-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+    margin: 20px auto;
+    color: white;
+}
+
+.st-photo{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.st-info>.info, .st-info>.photo{
+    font-size: 24px;
+    background-color: blueviolet;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

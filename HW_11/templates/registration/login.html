@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block menu %}
+    <header class="header">
+        <div class="conteiner">
+          <div class="header-wrap">
+            <div class="logo-wrap">
+              <p class="logo">MAIN PAGE</p>
+            </div>
+              <nav class="nav-wrap">
+                  <ul class="nav-list">
+                    <li class="nav-list-item">
+                      <a href="/"> MAIN PAGE </a>
+                    </li>
+                    <li class="nav-list-item">
+                      <a href="/admin/"> ADMIN PANEL </a>
+                    </li>
+                  </ul>
+              </nav>
+          </div>
+        </div>
+    </header>
+{% endblock %}
+{% block content1 %}
+<div class="form-container">
+    {% if form.errors %}
+    <p class="error-message">Your username and password didn't match. Please try again</p>
+    {% endif %}
+    <form method="post" action="{% url 'users:login' %}">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label class="username-password" for="id_username">Username</label>
+            <input type="text" name="username" id="id_username" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+            <label class="username-password" for="id_password">Password</label>
+            <input type="password" name="password" id="id_password" class="form-input" required>
+        </div>
+
+        <button class="submit-button" name="Submit">Log in</button>
+        <input type="hidden" name="next" value="{% url 'app1:index' %}"/>
+    </form>
+</div>
+{% endblock %}
