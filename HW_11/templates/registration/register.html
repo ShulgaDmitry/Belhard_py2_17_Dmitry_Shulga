@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block menu %}
+    <header class="header">
+        <div class="conteiner">
+          <div class="header-wrap">
+            <div class="logo-wrap">
+              <p class="logo">MAIN PAGE</p>
+            </div>
+              <nav class="nav-wrap">
+                  <ul class="nav-list">
+                    <li class="nav-list-item">
+                      <a href="/"> MAIN PAGE </a>
+                    </li>
+                    <li class="nav-list-item">
+                      <a href="/admin/"> ADMIN PANEL </a>
+                    </li>
+                  </ul>
+              </nav>
+          </div>
+        </div>
+    </header>
+{% endblock %}
+{% block content1 %}
+<div class="form-container">
+    {% if form.errors %}
+        <p class="error-message">Your username and password didn't match. Please try again</p>
+    {% endif %}
+    <form method="post" action="{% url 'users:register' %}">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label class="username-password" for="id_username">Username</label>
+            <input type="text" name="username" id="id_username" class="form-input" required>
+            <small class="helptext">Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_.</small>
+        </div>
+
+        <div class="form-group">
+            <label class="username-password" for="id_password1">Password</label>
+            <input type="password" name="password1" id="id_password1" class="form-input" required>
+            <small class="helptext">Пароль не должен быть слишком похож на другую вашу личную информацию.
+                                    Ваш пароль должен содержать как минимум 8 символов.
+                                    Пароль не должен быть слишком простым и распространенным.
+                                    Пароль не может состоять только из цифр</small>
+        </div>
+
+        <div class="form-group">
+            <label class="username-password" for="id_password2">Confirm Password</label>
+            <input type="password" name="password2" id="id_password2" class="form-input" required>
+            <small class="helptext">Повторите пароль</small>
+        </div>
+
+
+        <button class="submit-button" name="Submit">Register</button>
+        <input type="hidden" name="next" value="{% url 'app1:index' %}"/>
+    </form>
+</div>
+{% endblock %}

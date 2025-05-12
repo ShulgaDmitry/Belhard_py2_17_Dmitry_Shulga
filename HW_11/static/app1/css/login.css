@@ -68,3 +68,7 @@
     text-transform: uppercase;
     font-weight: bold;
 }
+
+.helptext {
+    color: blueviolet;
+}

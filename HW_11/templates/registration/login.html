@@ -15,6 +15,9 @@
                     <li class="nav-list-item">
                       <a href="/admin/"> ADMIN PANEL </a>
                     </li>
+                    <li class="nav-list-item">
+                      <a href="{% url 'users:register' %}"> REGISTRATION </a> </a>
+                    </li>
                   </ul>
               </nav>
           </div>
@@ -24,7 +27,7 @@
 {% block content1 %}
 <div class="form-container">
     {% if form.errors %}
-    <p class="error-message">Your username and password didn't match. Please try again</p>
+        <p class="error-message">Your username and password didn't match. Please try again</p>
     {% endif %}
     <form method="post" action="{% url 'users:login' %}">
         {% csrf_token %}
